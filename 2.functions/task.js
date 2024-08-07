@@ -27,35 +27,35 @@ function differenceMaxMinWorker(...arr) {
 }
 
 function differenceEvenOddWorker(...arr) {
-  let EvenElement = 0;
-  let OddElement = 0;
+  let evenElement = 0;
+  let oddElement = 0;
 	for (let i = 0; i < arr.length; i++) {
 			if (arr[i] % 2 === 0) {
-				EvenElement = EvenElement + arr[i]
+				evenElement = evenElement + arr[i]
 			} else {
-				OddElement = OddElement + arr[i]
+				OddElement = oddElement + arr[i]
 			};
 		};
   
-  return EvenElement - OddElement;
+  return evenElement - oddElement;
 }
 
 function averageEvenElementsWorker(...arr) {
-	let EvenElement = [];
+	let evenElement = [];
   if (arr.length === 0) {
     return 0
   } else     
   for (let i = 0; i < arr.length; i++) {
 			if (arr[i] % 2 === 0) {
-				EvenElement.push(arr[i])
+				evenElement.push(arr[i])
 			};
 		};
-  return Number((EvenElement.reduce((acc, val) => acc + val , 0 ) / EvenElement.length).toFixed(2));
+  return Number((evenElement.reduce((acc, val) => acc + val , 0 ) / evenElement.length).toFixed(2));
 };
 
 
 function makeWork (arrOfArr, func) {
-let maxWorkerResult = 0;   
+let maxWorkerResult = func(...arr);   
 for (let i = 0; i < arrOfArr.length; i++) {
  for (let u = 0; u < arrOfArr[i].length; u++) {
    if (arrOfArr[i][u] > maxWorkerResult) {
