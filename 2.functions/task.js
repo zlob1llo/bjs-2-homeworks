@@ -44,8 +44,8 @@ function averageEvenElementsWorker(...arr) {
   let evenElement = []
   if (arr.length === 0) {
     return 0
-  } else
-    for (let i = 0; i < arr.length; i++) {
+  };
+  for (let i = 0; i < arr.length; i++) {
       if (arr[i] % 2 === 0) {
         evenElement.push(arr[i])
       }
