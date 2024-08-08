@@ -37,7 +37,6 @@ function differenceEvenOddWorker(...arr) {
       oddElement = oddElement + arr[i]
     }
   }
-
   return evenElement - oddElement
 }
 
@@ -52,20 +51,11 @@ function averageEvenElementsWorker(...arr) {
       }
     }
   return Number(
-    (
-      evenElement.reduce((acc, val) => acc + val, 0) / evenElement.length
-    ).toFixed(2)
+    evenElement.reduce((acc, val) => acc + val) / evenElement.length
   )
 }
 
 function makeWork(arrOfArr, func) {
-  let maxWorkerResult = func(...arr)
-  for (let i = 0; i < arrOfArr.length; i++) {
-    for (let u = 0; u < arrOfArr[i].length; u++) {
-      if (arrOfArr[i][u] > maxWorkerResult) {
-        maxWorkerResult = arrOfArr[i][u]
-      }
-    }
-  }
-  return maxWorkerResult
+  return Math.max(...arrOfArr.map(arr => func(...arr)))
 }
+
