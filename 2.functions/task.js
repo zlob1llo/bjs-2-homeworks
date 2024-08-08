@@ -50,9 +50,7 @@ function averageEvenElementsWorker(...arr) {
         evenElement.push(arr[i])
       }
     }
-  return Number(
-    evenElement.reduce((acc, val) => acc + val) / evenElement.length
-  )
+  return evenElement.reduce((acc, val) => acc + val) / evenElement.length
 }
 
 function makeWork(arrOfArr, func) {
