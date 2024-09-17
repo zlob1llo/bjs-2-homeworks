@@ -53,7 +53,18 @@ function averageEvenElementsWorker(...arr) {
   return evenElement.reduce((acc, val) => acc + val) / evenElement.length
 }
 
-function makeWork(arrOfArr, func) {
-  return Math.max(...arrOfArr.map(arr => func(...arr)))
-}
+// function makeWork(arrOfArr, func) {
+//   return Math.max(...arrOfArr.map(arr => func(...arr)))
+// }
 
+function makeWork(arrOfArr, func) {
+  let maxWorkerResult = 0;
+  for (let i = 0; i < arrOfArr.length; i++){
+    if (func(arrOfArr[i]) > maxWorkerResult){
+     maxWorkerResult = func(arrOfArr[i])
+    }
+    console.log ();
+    console.log (maxWorkerResult);
+  }
+}
+  
